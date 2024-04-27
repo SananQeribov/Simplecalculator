@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="mainactivityobje"
+            type="com.example.simple_project.MainActivity" />
+               <variable
+                   name="resultview"
+                   type="String" />
+<import type="android.view.View"/>
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="133dp"
+        android:layout_height="47dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:textSize="20dp"
+        android:text="@{resultview}"
+        android:textColor="@{Integer.parseInt(resultview)>10 ? @color/blue:@color/green }"
+        android:visibility="@{Integer.parseInt(resultview)>25 ? View.INVISIBLE:View.VISIBLE}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/vurma"
+        android:layout_width="151dp"
+        android:layout_height="71dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="295dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/vurma"
+        android:onClick="@{()->mainactivityobje.vurma(sayi1.getText().toString(), sayi2.getText().toString())}"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="244dp" />
+
+    <Button
+        android:id="@+id/toplama"
+        android:layout_width="155dp"
+        android:layout_height="72dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="297dp"
+        android:text="@string/toplama"
+        android:onClick="@{()->mainactivityobje.toplama(sayi1.getText().toString(), sayi2.getText().toString())}"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="244dp" />
+
+    <EditText
+        android:id="@+id/sayi1"
+        android:layout_width="233dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="184dp"
+        android:ems="10"
+        android:hint="sayy2"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <EditText
+        android:id="@+id/sayi2"
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="113dp"
+        android:ems="10"
+        android:hint="say1"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="134dp" />
+</RelativeLayout>
+</layout>
